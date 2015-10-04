@@ -1,3 +1,4 @@
+--Create table to store raw general hospital data
 DROP TABLE hosp_general;
 CREATE EXTERNAL TABLE hosp_general(
 	ProviderID STRING,
@@ -17,6 +18,7 @@ FIELDS TERMINATED BY ‘,’
 STORED AS TEXTFILE
 LOCATION ‘/user/lbradley/hospital_compare/hosp_general.csv’;
 
+--Create table to store effective care scores
 DROP TABLE effective_care;
 CREATE EXTERNAL TABLE effective_care(
 	ProviderID STRING,
@@ -41,6 +43,7 @@ FIELDS TERMINATED BY ‘,’
 STORED AS TEXTFILE
 LOCATION ‘/user/lbradley/hospital_compare/effective_care.csv’;
 
+--Create table to store readmission and death scores
 DROP TABLE readmissions;
 CREATE EXTERNAL TABLE readmissions(
 	ProviderID STRING,
@@ -67,6 +70,7 @@ FIELDS TERMINATED BY ‘,’
 STORED AS TEXTFILE
 LOCATION ‘/user/lbradley/hospital_compare/readmissions.csv’;
 
+--Create table to store survey response scores
 DROP TABLE surveys_responses;
 CREATE EXTERNAL TABLE surveys_responses(
 	ProviderID STRING,
