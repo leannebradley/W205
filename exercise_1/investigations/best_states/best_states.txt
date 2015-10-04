@@ -1,0 +1,8 @@
+The ten states with the highest quality of care are:
+
+Supporting table:
+
+
+I've leveraged the field from question one, RelativeScore, and aggregated it at the state level.
+
+To identify states with the most consistently high scores, I've calculated each state's average relative score.  This gives us the average rank of each state, over every measure, compared to the others.

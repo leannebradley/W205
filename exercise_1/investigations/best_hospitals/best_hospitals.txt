@@ -1,0 +1,8 @@
+The ten hospitals with the highest quality of care are:
+
+Supporting table:
+
+
+I've defined a new field, RelativeScore, as the hospital's position, in terms of standard deviation, compared to the national average.  For scores from the Timely and Effective Care file, a higher-than-average score is better, so a relative score is defined as the number of standard deviations above the national mean.  For scores from the Readmissions and Death file, a lower-than-average score is better, so a relative score is defined as the number of standard deviations below the national mean.  This approach allows us to normalize the scores for different measures, and to combine scores from the Timely and Effective Care file with the Readmissions and Death file.
+
+To identify hospitals with the most consistently high scores, I've calculated each hospital's average relative score.  This gives us the average rank of each hospital, over every measure, compared to the others.

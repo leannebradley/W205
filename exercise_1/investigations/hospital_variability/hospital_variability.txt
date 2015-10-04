@@ -1,0 +1,8 @@
+The ten procedures with the greatest variability between hospitals are:
+
+Supporting table:
+
+
+For this question I calculated the absolute range in hospitals' relative scores for each procedure (maximum minus minimum).
+
+The procedures that have the broadest range are the procedures with the greatest variability.

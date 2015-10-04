@@ -1,0 +1,5 @@
+The correlation coefficient between hospitals' overall survey scores and their relative score,calculated based on Timely and Effective Care and Readmissions and Death, is: 
+
+For this question I used the corr() function, which returns the Pearson coefficient of correlation of a pair of a numeric columns.  
+
+The result, ... , indicates that there is ..... correlation between survey scores and each hospital's relative score, as defined in my database.
