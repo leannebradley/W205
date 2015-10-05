@@ -1,12 +1,12 @@
 #! /bin/bash
 
 #move to the right folder 
-cd /...
+cd /data
 mkdir exercise1_raw_data
 cd exercise1_raw_data
 
 #pull data from online source
-wget -0 ./hospital.zip https://data.medicare.gov/views/bg9k-emty/files/Nqcy71p9Ss2RSBWDmP77H1DQXcyacr2khotGbDHHW_s?content_type=application%2Fzip%3B%20charset%3Dbinary&filename=Hospital_Revised_Flatfiles.zip
+wget -O ./hospital.zip https://data.medicare.gov/views/bg9k-emty/files/Nqcy71p9Ss2RSBWDmP77H1DQXcyacr2khotGbDHHW_s?content_type=application%2Fzip%3B%20charset%3Dbinary&filename=Hospital_Revised_Flatfiles.zip
 
 #unzip
 unzip hospital.zip
