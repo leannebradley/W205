@@ -20,7 +20,11 @@ tail -n +2 hvbp_hcahps_05_28_2015.csv > surveys_responses.csv
 
 #create HDFS folders
 hdfs dfs -mkdir /user/lbradley/hospital_compare
-hdfs dfs -put hosp_general.csv /user/lbradley/hospital_compare
-hdfs dfs -put effective_care.csv /user/lbradley/hospital_compare
-hdfs dfs -put readmissions.csv /user/lbradley/hospital_compare
-hdfs dfs -put surveys_responses.csv /user/lbradley/hospital_compare
+hdfs dfs -mkdir /user/lbradley/hospital_compare/hg
+hdfs dfs -mkdir /user/lbradley/hospital_compare/ec
+hdfs dfs -mkdir /user/lbradley/hospital_compare/re
+hdfs dfs -mkdir /user/lbradley/hospital_compare/sr
+hdfs dfs -put hosp_general.csv /user/lbradley/hospital_compare/hg
+hdfs dfs -put effective_care.csv /user/lbradley/hospital_compare/ec
+hdfs dfs -put readmissions.csv /user/lbradley/hospital_compare/re
+hdfs dfs -put surveys_responses.csv /user/lbradley/hospital_compare/sr

@@ -1,22 +1,10 @@
 --Create table to store raw general hospital data
 DROP TABLE hosp_general;
 CREATE EXTERNAL TABLE hosp_general(
-	ProviderID STRING,
- 	HospitalName STRING,
- 	Address STRING,
- 	City STRING,
- 	State STRING,
- 	Zip STRING,
- 	County STRING,
- 	PhoneNumber STRING,
- 	HospitalType STRING,
- 	Ownership STRING,
- 	EmergencySvcs STRING
-)
-ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ‘,’
+	ProviderID STRING,HospitalName STRING,Address STRING,City STRING,State STRING,Zip STRING,County STRING,PhoneNumber STRING,HospitalType STRING,Ownership STRING,EmergencySvcs STRING)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
-LOCATION ‘/user/lbradley/hospital_compare/hosp_general.csv’;
+LOCATION '/user/lbradley/hospital_compare/hg';
 
 --Create table to store effective care scores
 DROP TABLE effective_care;
@@ -39,9 +27,9 @@ CREATE EXTERNAL TABLE effective_care(
  	MeasureEndDt STRING
 )
 ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ‘,’
+FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
-LOCATION ‘/user/lbradley/hospital_compare/effective_care.csv’;
+LOCATION '/user/lbradley/hospital_compare/ec';
 
 --Create table to store readmission and death scores
 DROP TABLE readmissions;
@@ -66,9 +54,9 @@ CREATE EXTERNAL TABLE readmissions(
  	MeasureEndDt STRING
 )
 ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ‘,’
+FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
-LOCATION ‘/user/lbradley/hospital_compare/readmissions.csv’;
+LOCATION '/user/lbradley/hospital_compare/re';
 
 --Create table to store survey response scores
 DROP TABLE surveys_responses;
@@ -108,6 +96,6 @@ CREATE EXTERNAL TABLE surveys_responses(
  	HCAHPSConsistency STRING
 )
 ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ‘,’
+FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
-LOCATION ‘/user/lbradley/hospital_compare/surveys_responses.csv’;
+LOCATION '/user/lbradley/hospital_compare/sr';
