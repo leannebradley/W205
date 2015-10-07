@@ -1,8 +1,18 @@
-The ten procedures with the greatest variability between hospitals are:
+The ten procedures with the greatest variability between hospitals are listed below:
 
-Supporting table:
+MeasureID, MeasureName, Rank, Hospitals' Max SD from Mean, Hospitals' Min SD from Mean, Range of Deviations
+"SCIP_INF_10"	"Surgery Patients with Perioperative Temperature Management"	1	0.1761922907176309	-30.378781264490925	30.554973555208555
+"OP_5"	"Median Time to ECG"	2	21.684557036752974	-1.3516202882489383	23.036177325001912
+"SCIP_VTE_2"	"Surgery Patients Who Received Appropriate Venous Thromboembolism Prophylaxis Within 24 Hours Prior to Surgery to 24 Hours After Surgery"	3	0.24164707886758383	-20.842884799391555	21.08453187825914
+"STK_5"	"Antithrombotic Therapy by End of Hospital Day 2"	4	0.41599032420804744	-17.989643178719774	18.40563350292782
+"ED_2b"	"ED2"	5	16.621706675620874	-1.5830439089132446	18.204750584534118
+"SCIP_INF_2"	"Prophylactic Antibiotic Selection for Surgical Patients"	6	0.4643659392100348	-17.511442329934138	17.97580826914417
+"VTE_4"	"Unfractionated heparin with dosages/platelet count monitoring"	7	0.21163874612228278	-17.397995365239325	17.609634111361608
+"SCIP_INF_1"	"Prophylactic antibiotic received within 1 hour prior to surgical incision"	8	0.34951251857932536	-17.23208649846216	17.581599017041484
+"STK_10"	"Assessed for Rehabilitation"	9	0.4899602637393132	-16.20528014875391	16.695240412493224
+"AMI_2"	"Aspirin prescribed at discharge"	10	0.3476929520154292	-16.28450367808729	16.63219663010272
 
 
 For this question I calculated the absolute range in hospitals' relative scores for each procedure (maximum minus minimum).
 
-The procedures that have the broadest range are the procedures with the greatest variability.
+The procedures that have the broadest range are the procedures with the greatest variability.  

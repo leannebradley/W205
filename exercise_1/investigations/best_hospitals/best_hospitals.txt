@@ -1,8 +1,18 @@
-The ten hospitals with the highest quality of care are:
+The ten hospitals with the highest quality of care are listed below.  These are ranked based on the average relative score, where it is available.
 
-Supporting table:
+Name, Rank, Average Relative Score, Standard Deviation of Relative Score
+"EAST ADAMS RURAL HOSPITAL"	1	1.1273169010305153	0.0
+"MERCY MEDICAL CENTER-DYERSVILLE"	2	1.0659933538034145	0.0
+"HOAG ORTHOPEDIC INSTITUTE"	3	1.003708051470092	1.281622372494836
+"PROVIDENT HOSPITAL OF CHICAGO"	4	0.9867330756826844	2.0848561965007044
+"LANDMANN-JUNGMAN MEMORIAL HOSPITAL - CAH"	5	0.8658790254988701	0.0
+"CORYELL MEMORIAL HEALTHCARE SYSTEM"	6	0.8599436910586221	1.628276157933162
+"KANSAS SURGERY & RECOVERY CENTER"	7	0.832177347193035	0.7219655898441663
+"CHI HEALTH  - MERCY CORNING"	8	0.7802018677298314	0.27672039367551543
+"JAMES E. VAN ZANDT VA MEDICAL CENTER - ALTOONA"	9	0.768750909496776	0.5397107381346428
+"UNIVERSITY OF SOUTH ALABAMA MEDICAL CENTER"	10	0.7668241792743968	1.5202284784610134
 
 
 I've defined a new field, RelativeScore, as the hospital's position, in terms of standard deviation, compared to the national average.  For scores from the Timely and Effective Care file, a higher-than-average score is better, so a relative score is defined as the number of standard deviations above the national mean.  For scores from the Readmissions and Death file, a lower-than-average score is better, so a relative score is defined as the number of standard deviations below the national mean.  This approach allows us to normalize the scores for different measures, and to combine scores from the Timely and Effective Care file with the Readmissions and Death file.
 
-To identify hospitals with the most consistently high scores, I've calculated each hospital's average relative score.  This gives us the average rank of each hospital, over every measure, compared to the others.
+To identify hospitals with the most consistently high scores, I've calculated each hospital's average relative score.  This gives us the average rank of each hospital, over each measure available, compared to the others.

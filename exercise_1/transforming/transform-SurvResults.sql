@@ -1,12 +1,14 @@
 --Create Survey Response summary table
+DROP TABLE SurveyResults;
 CREATE TABLE SurveyResults AS
 SELECT HospitalName
-, Avg(case when Overall_Dim = 'Not Available' then null else cast(Overall_Dim as decimal(10,2)) end) as AvgOverallScore
-, Avg(case when HCAHPSBase = 'Not Available' then null else cast(HCAHPSBase as decimal(10,2)) end) as AvgHCAHPSBase
-, Avg(case when HCAHPSConsistency = 'Not Available' then null else cast(HCAHPSConsistency as decimal(10,2)) end) as AvgHCAHPSConsistency
-, stddev_pop(case when Overall_Dim = 'Not Available' then null else cast(Overall_Dim as decimal(10,2)) end) as StDevOverallScore
-, stddev_pop(case when HCAHPSBase = 'Not Available' then null else cast(HCAHPSBase as decimal(10,2)) end) as StDevHCAHPSBase
-, stddev_pop(case when HCAHPSConsistency = 'Not Available' then null else cast(HCAHPSConsistency as decimal(10,2)) end) as StDevHCAHPSConsistency
+, Avg(Overall_Dim) as AvgOverallScore
+, stddev_pop(Overall_Dim) as StDevOverallScore
+from
+(SELECT HospitalName
+, cast(trim(substr(Overall_Dim, 2, 2)) as decimal(10,2)) as Overall_Dim
 FROM surveys_responses
+where Overall_Dim <> 'Not Available') a
 group by HospitalName;
+
 

@@ -1,8 +1,18 @@
-The ten states with the highest quality of care are:
+The ten states with the highest quality of care are listed below.  These are ranked based on the average relative score, where it is available.
 
-Supporting table:
+State, Rank, Average Relative Score, Standard Deviation of Relative Score
+DE"	1	0.2508563669822825	0.6770347606757142
+"MONROEVILLE"	2	0.21013323929077077	0.4561122450300634
+"NH"	3	0.19971957477259422	0.6842265505998506
+"ME"	4	0.1676172123718416	0.6707708459942684
+"MA"	5	0.16425637326247503	0.7672787942674494
+"MD"	6	0.14805855854703506	0.9496620965020919
+"NC"	7	0.1300907485366652	0.7761728425320241
+"CT"	8	0.12733274803122904	0.7438210258529319
+"CO"	9	0.11467187800710874	0.7803131652596651
+"SC"	10	0.11278713969933081	0.8341896741099619
 
 
-I've leveraged the field from question one, RelativeScore, and aggregated it at the state level.
+I've leveraged the RelativeScore field from question one, RelativeScore, and aggregated it at the state level.  Whoops - I see I have a data cleaning issue.  We've returned a state called Monroeville, indicating that there are some cities or counties in our state fields.  I also notice that the average relative score is closer to zero when we aggregate to the state level, which is expected when you consider that we are looking at average deviation from the mean.  There will be less skew at the state level than there was at the hospital level.
 
-To identify states with the most consistently high scores, I've calculated each state's average relative score.  This gives us the average rank of each state, over every measure, compared to the others.
+To identify states with the most consistently high scores, I've calculated each state's average relative score.  This gives us the average rank of each state, over each measure available, compared to the others.

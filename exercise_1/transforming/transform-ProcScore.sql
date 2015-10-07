@@ -1,24 +1,31 @@
 --Create summarized Procecure Score table.  Add scores from Effective and Timely Care table
 --Define a "Relative Score" as this hospital's position in terms of standard deviations better than the national mean
+DROP TABLE ProcedureScore;
 CREATE TABLE ProcedureScore AS
-SELECT effective_care.MeasureID
-, effective_care.MeasureName
-, effective_care.HospitalName
+SELECT a.MeasureID
+, a.MeasureName
+, a.HospitalName
 , 'EffTmlyCare' as EvalType  --for this category, high scores are good
-, Avg(case when effective_care.Score = 'Not Available' then null else cast(effective_care.Score as decimal(10,2)) end) as AvgScore
-, (Avg(case when effective_care.Score = 'Not Available' then null else cast(effective_care.Score as decimal(10,2)) end) - Avg(MeasureSummary.AvgScore))/Avg(MeasureSummary.StDevScore) as RelativeScore
-FROM effective_care
-join MeasureSummary on (MeasureSummary.MeasureID = effective_care.MeasureID)
-group by effective_care.MeasureID, effective_care.MeasureName, effective_care.HospitalName;
+, Avg(a.score) as AvgScore
+, (Avg(a.score) - Avg(MeasureSummary.AvgScore))/Avg(MeasureSummary.StDevScore) as RelativeScore
+from (
+select HospitalName, MeasureID, MeasureName, cast(regexp_replace(Score, '"', '') as decimal(10,2)) as Score
+from effective_care) a
+join MeasureSummary on (MeasureSummary.MeasureID = a.MeasureID)
+where Score is not null 
+group by a.MeasureID, a.MeasureName, a.HospitalName;
 --Add scores from Readmissions and Death table
 INSERT INTO TABLE ProcedureScore 
-select effective_care.MeasureID
-, effective_care.MeasureName
-, effective_care.HospitalName
+select a.MeasureID
+, a.MeasureName
+, a.HospitalName
 , 'ReadminDth'   --for this category, high scores are bad
-, Avg(case when effective_care.Score = 'Not Available' then null else cast(effective_care.Score as decimal(10,2)) end)
+, Avg(a.score)
 --reverse the relative score calculation for ReadminDth because, in this case, lower is better
-, (Avg(MeasureSummary.AvgScore) - Avg(case when effective_care.Score = 'Not Available' then null else cast(effective_care.Score as decimal(10,2)) end))/Avg(MeasureSummary.StDevScore)
-FROM effective_care
-join MeasureSummary on (MeasureSummary.MeasureID = effective_care.MeasureID)
-group by effective_care.MeasureID, effective_care.MeasureName, effective_care.HospitalName;
+, (Avg(MeasureSummary.AvgScore) - Avg(a.score))/Avg(MeasureSummary.StDevScore)
+FROM (
+select HospitalName, MeasureID, MeasureName, cast(regexp_replace(Score, '"', '') as decimal(10,2)) as Score
+from readmissions) a
+join MeasureSummary on (MeasureSummary.MeasureID = a.MeasureID)
+where Score is not null 
+group by a.MeasureID, a.MeasureName, a.HospitalName;
