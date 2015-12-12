@@ -8,7 +8,7 @@
   </preferences>
   <datasources>
     <datasource caption='finalresults' inline='true' name='textscan.42349.941753726900' version='9.0'>
-      <connection class='textscan' directory='/Users/leannebradley/Documents/MIDS/StoringRetrievingData/FinalProjectWork' filename='finalresults.txt' password='' server=''>
+      <connection class='textscan' directory='/Users/leannebradley/Documents/MIDS/StoringRetrievingData/W205/FinalProject' filename='finalresults.txt' password='' server=''>
         <relation name='finalresults#txt' table='[finalresults#txt]' type='table'>
           <columns character-set='UTF-8' header='no' locale='en_US' separator='&#9;'>
             <column datatype='string' name='F1' ordinal='0' />
@@ -211,14 +211,15 @@
       <column-instance column='[F4]' derivation='None' name='[none:F4:nk]' pivot='key' type='nominal' />
       <column-instance column='[F7]' derivation='Sum' name='[sum:F7:qk]' pivot='key' type='quantitative' />
       <extract count='-1' enabled='true' units='records'>
-        <connection class='dataengine' dbname='/Users/leannebradley/Documents/MIDS/StoringRetrievingData/FinalProjectWork/finalresults.tde' schema='Extract' tablename='Extract' update-time='12/12/2015 07:47:03 AM'>
+        <connection class='dataengine' dbname='/Users/leannebradley/Documents/MIDS/StoringRetrievingData/W205/FinalProject/finalresults.tde' schema='Extract' tablename='Extract' update-time='12/12/2015 08:08:24 AM'>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <calculations>
             <calculation column='[Calculation_0591211223829544]' formula='[F5]*5' />
+            <calculation column='[Crime (copy)]' formula='[F2]' />
             <calculation column='[Number of Records]' formula='1' />
           </calculations>
-          <refresh increment-key='' incremental-updates='false'>
-            <refresh-event add-from-file-path='' increment-value='%null%' refresh-type='create' rows-inserted='48445' timestamp-start='2015-12-12 07:47:03.046' />
+          <refresh>
+            <refresh-event add-from-file-path='' increment-value='%null%' refresh-type='create' rows-inserted='48445' timestamp-start='2015-12-12 08:08:24.036' />
           </refresh>
           <metadata-records>
             <metadata-record class='column'>
@@ -247,6 +248,37 @@
                 <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
                 <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
                 <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>3</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>2</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Crime (copy)</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Crime (copy)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Crime (copy)</remote-alias>
+              <ordinal>1</ordinal>
+              <family>finalresults#txt</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>34</approx-count>
+              <scale>1</scale>
+              <width>1073741823</width>
+              <contains-null>false</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <statistics>
+                <statistic aggregation='Min' datatype='string'>&quot;ARSON&quot;</statistic>
+                <statistic aggregation='Max' datatype='string'>&quot;WEAPONS VIOLATION&quot;</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>2</attribute>
                 <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
                 <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>2</attribute>
                 <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
@@ -1020,6 +1052,8 @@
           <field>[textscan.42349.941753726900].[none:F4:nk]</field>
         </color-one-way>
       </highlight>
+      <viewpoint>
+      </viewpoint>
     </window>
     <window auto-hidden='0' class='worksheet' maximized='0' name='Day vs Night'>
       <cards>
@@ -1050,6 +1084,8 @@
           <field>[textscan.42349.941753726900].[none:F4:nk]</field>
         </color-one-way>
       </highlight>
+      <viewpoint>
+      </viewpoint>
     </window>
     <window auto-hidden='0' class='worksheet' maximized='0' name='Wet vs Dry'>
       <cards>
@@ -1080,6 +1116,8 @@
           <field>[textscan.42349.941753726900].[none:F4:nk]</field>
         </color-one-way>
       </highlight>
+      <viewpoint>
+      </viewpoint>
     </window>
     <window auto-hidden='0' class='dashboard' maximized='1' name='Dashboard 1'>
       <zones>
