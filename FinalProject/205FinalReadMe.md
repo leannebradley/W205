@@ -8,11 +8,8 @@ Goal of the project
 
 Steps to run this project:
 
-  - Run finalproject.sh in bash to import data and create HDFS folders
+  - Run FinalProjectLoad.sh in bash to import data and create HDFS folders
   - Run finalproject_hivebase.sql in Hive to create raw data tables 
   - Run finalproject_hivetransform.sql in Hive to stitch weather and crime data together and generate summary statistics
-  - Launch HiveServer2 in bash: 
- ```sh
-$ hive -service hiveserver2
-```
+  - Run ExtractResults.sh in bash to extract results from Hive and push them to a Git repo
   - Open the Tableau workbook finalproject.tde to explore the data
