@@ -10,7 +10,7 @@ $ cd /data
 $ sh start_postgres.sh 
 ```
   - Open psql, create a database name tcount with a table called tweetwordcount:
- ```sh
+```sh
 $ psql -U postgres
 # CREATE DATABASE tcount;
 # \c tcount
@@ -28,12 +28,12 @@ $ streamparse run
   - Allow the twitter stream to run for several minutes (you can monitor on screen).  
   - Type ctrl-c to close the stream.
   - Use finalresults.py to explore the wordcounts: 
- ```sh
+```sh
 $ cd /exercise_2
 $ python finalresults.py you
 $ python finalresults.py
 ```
   - Use histogram.py to explore words with counts within a certain range: 
- ```sh
+```sh
 $ python histogram.py 100 400
 ```
